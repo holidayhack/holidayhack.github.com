@@ -3,5 +3,5 @@
 npm install node-static
 
 if [ "$1" == "--global" ]; then
-  npm install -g uglifycss uglify-js jade stylus coffee-script
+  npm install -g uglifycss uglify-js jade markdown stylus coffee-script
 fi
