@@ -7,8 +7,9 @@
 
   var files = new (require('node-static').Server)(WEBROOT);
 
+  console.log('Starting static file server on port ' + PORT + '...');
   require('http').createServer(function(req, resp) {
-    request.addListener('end', function() {
+    req.addListener('end', function() {
       files.serve(req, resp);
     });
   }).listen(PORT);
