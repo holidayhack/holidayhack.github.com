@@ -1,2 +1,120 @@
-body
-  background-color: white
+
+// pallette ----
+
+color-highlight = #A0D897
+color-light     = #F09E30
+color-medium    = #D03621
+color-dark      = #7E0924
+color-darkest   = #370128
+
+color-bg        = #EEEEED
+color-shadow    = silver
+color-text      = #333333
+color-demote    = silver
+
+// misc vars ----
+
+line-height     = 32px
+golden-ratio    = 1.61803
+font-largest    = 24px
+font-larger     = 23px
+font-base       = 22px
+font-smaller    = 20px
+font-smallest   = 18px
+font-fixed      = Menlo, Consolas, Lucida Console, Courier
+font-variable   = Georgia
+
+// globals ----
+
+*, html, body
+  font_read()
+  padding 0
+  margin 0
+
+html, body
+  background-color color-bg
+
+// typo ----
+
+font_base()
+  font-size font-base
+  line-height line-height
+  color color-text
+
+font_head()
+  font_base()
+  font-family font-fixed
+  color color-dark
+
+font_read()
+  font_base()
+  font-family font-variable
+
+h1, h2, h3
+  font_head()
+  text-transform uppercase
+  padding-top 1em
+  text-shadow 0.05em 0.05em color-shadow
+
+p, td, div, code, pre
+  font_read()
+
+h1
+  font-weight bold
+  padding-top 8em
+h2
+  padding-top 4em
+h3
+  color color-darker
+  font-weight normal
+p
+  margin-bottom 1em
+p.highlight
+  font-size font-largest
+  color color-text + #111111
+  letter-spacing 1px
+  margin-top 1.5em
+  margin-bottom 1.5em
+p.subtle
+  font-size font-smaller
+  color color-demote
+li
+  font-size font-smaller
+  margin-bottom 1em
+  list-style-type lower-greek
+
+// fragments
+
+a:hover, a:link, a:visited
+  color color-light
+
+code
+  font-family font-fixed
+  font-size font-smaller
+
+.money
+  font-family font-fixed
+  font-size font-smaller
+  font-weight bold
+  color green
+
+acronym, abbr
+  border-bottom dotted color-demote
+
+// layouts ----
+
+.container
+  margin 0 auto
+  width 640px
+
+.area
+  display block
+.area-top
+  @extend .area
+  margin-top 1em
+.area-middle
+  @extend .area
+.area-bottom
+  @extend .area
+  margin-bottom 12em
+
