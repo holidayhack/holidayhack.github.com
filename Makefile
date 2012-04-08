@@ -16,7 +16,7 @@ out/site.js: src/site.coffee
 	coffee --compile --stdio < src/site.coffee > public/site.js
 	uglifyjs --overwrite public/site.js
 
-out/favicon.png: assets/logo_256_darkred.png
-	cp assets/logo_256_darkred.png public/favicon.png
+out/favicon.png: assets/logo_mid_darkred.png
+	cp assets/logo_mid_darkred.png public/favicon.png
 out/splat.png: assets/logo_splash.png
 	cp assets/logo_splash.png public/splat.png
