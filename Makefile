@@ -1,22 +1,18 @@
-default: all
-all: out/index.html out/site.js out/site.css out/favicon.png out/splat.png
-
-out/site.css: src/site.styl
+default:
 	mkdir -p public
+	@echo ________________________________________
+	@echo                             JADE -\> HTML
+	jade < src/index.jade > public/index.html
+	@echo ________________________________________
+	@echo                              STYL -\> CSS
 	stylus < src/site.styl > public/site.css
 	uglifycss public/site.css > public/site.css.tmp
 	mv -f public/site.css.tmp public/site.css
-
-out/index.html: src/index.jade
-	mkdir -p public
-	jade < src/index.jade > public/index.html
-
-out/site.js: src/site.coffee
-	mkdir -p public
+	@echo ________________________________________
+	@echo                             COFFEE -\> JS
 	coffee --compile --stdio < src/site.coffee > public/site.js
 	uglifyjs --overwrite public/site.js
-
-out/favicon.png: assets/logo_mid_darkred.png
-	cp assets/logo_mid_darkred.png public/favicon.png
-out/splat.png: assets/logo_splash.png
-	cp assets/logo_splash.png public/splat.png
+	@echo ________________________________________
+	@echo                                   ASSETS
+	cp assets/v2/logo_lone_256.png public/favicon.png
+	cp assets/v2/logo_splash.png public/splat.png
