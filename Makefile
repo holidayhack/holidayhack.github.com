@@ -14,5 +14,5 @@ default:
 	uglifyjs --overwrite public/site.js
 	@echo ________________________________________
 	@echo                                   ASSETS
-	cp assets/v2/logo_lone_256.png public/favicon.png
+	cp assets/v1/logo_256_darkred.png public/favicon.png
 	cp assets/v2/logo_splash.png public/splat.png
