@@ -15,4 +15,5 @@ default:
 	@echo ________________________________________
 	@echo                                   ASSETS
 	cp assets/v1/logo_256.png public/favicon.png
+	cp assets/v1/logo_1024.png public/logo_1024.png
 	cp assets/v2/logo_splash.png public/splat.png
