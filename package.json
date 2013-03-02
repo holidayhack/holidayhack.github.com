@@ -1,0 +1,26 @@
+{
+  "name": "holidayhack.github.com",
+  "version": "0.1.0",
+  "description": "holidayhack project",
+  "main": "app.js",
+  "dependencies": {
+    "uglifycss": "0.0.5",
+    "jade": "~0.28.1",
+    "stylus": "~0.32.1",
+    "uglify-js": "~2.2.5",
+    "coffee-script": "~1.5.0",
+    "markdown": "~0.4.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/holidayhack/holidayhack.github.com.git"
+  },
+  "author": "Chakrit Wichian <service@chakrit.net> (http://chakrit.net)",
+  "license": "Copyright (c) 2013 All rights reserved.",
+  "gitHead": "94423259a33a3ca1aaab799842cb19dd8f495337",
+  "readmeFilename": "README.md"
+}
