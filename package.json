@@ -9,7 +9,8 @@
     "stylus": "~0.32.1",
     "uglify-js": "~2.2.5",
     "coffee-script": "~1.5.0",
-    "markdown": "~0.4.0"
+    "markdown": "~0.4.0",
+    "supervisor": "~0.5.2"
   },
   "devDependencies": {},
   "scripts": {
