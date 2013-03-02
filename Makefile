@@ -1,7 +1,10 @@
 
 BIN = ./node_modules/.bin
 
-default:
+node_modules:
+	npm install
+
+default: node_modules
 	mkdir -p public
 	@echo _________________________________________________________________________________
 	@echo "                                                                     JADE -> HTML"
