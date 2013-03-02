@@ -1,4 +1,13 @@
 
+// imports ----
+
+@import url('http://meyerweb.com/eric/tools/css/reset/reset.css')
+// @import url('http://basehold.it/48')
+
+@import url('http://fonts.googleapis.com/css?family=Source+Code+Pro:200,500,900')
+@import url('http://fonts.googleapis.com/css?family=Source+Sans+Pro:200,400,900')
+@import url('http://fonts.googleapis.com/css?family=Brawler')
+
 // pallette ----
 
 color-highlight = #A0D897
@@ -12,26 +21,33 @@ color-shadow    = silver
 color-text      = #333333
 color-demote    = silver
 
-// misc vars ----
+// font vars ----
 
-line-height     = 32px
 golden-ratio    = 1.61803
-font-largest    = 24px
-font-larger     = 23px
-font-base       = 22px
-font-smaller    = 20px
-font-smallest   = 18px
-font-fixed      = Menlo, Consolas, Lucida Console, Courier
-font-variable   = Georgia
+
+line-height     = 2em
+font-base       = 24px
+
+font-large    = 2.0em
+font-medium     = 1.0em
+
+font-fixed      = "Source Code Pro", Menlo, Consolas, Lucida Console, Courier
+font-sans       = "Source Sans Pro", sans-serif
+font-serif      = Brawler
 
 // globals ----
 
 *, html, body
-  font_read()
+  font-size font-base
+  font-family font-serif
+  font-weight lighter
+  color color-text
   padding 0
   margin 0
 
 html, body
+  font-size font-base
+  line-height line-height
   background-color color-bg
   background-image url('splat.png')
   background-attachment fixed
@@ -40,52 +56,54 @@ html, body
 
 // typo ----
 
-font_base()
-  font-size font-base
-  line-height line-height
-  color color-text
-
-font_head()
-  font_base()
-  font-family font-fixed
-  color color-dark
-
-font_read()
-  font_base()
-  font-family font-variable
-
 h1, h2, h3
-  font_head()
+  font-family font-fixed
+  font-weight normal
+  font-size font-large
+  color color-dark
   text-transform uppercase
-  padding-top 1em
-  text-shadow 0.05em 0.05em color-shadow
-
-p, td, div, code, pre
-  font_read()
+  text-shadow 0.00em 0.05em color-shadow
+  margin-top 1em
+  margin-bottom 1em
+  a
+    color color-dark
 
 h1
-  font-weight bold
-  padding-top 8em
+  margin-top 4em
 h2
-  padding-top 4em
+  margin-top 4em
 h3
   color color-darker
-  font-weight normal
+
 p
-  margin-bottom 1em
+  margin-bottom 2em
 p.highlight
-  font-size font-largest
+  font-family font-sans
+  font-size font-large
+  margin-bottom (1 / font-large) * 2em
+  margin-top (1 / font-large) * 2em
+  line-height (1 / font-large) * 3em
+  font-weight lighter
   color color-text + #111111
   letter-spacing 1px
-  margin-top 1.5em
-  margin-bottom 1.5em
-p.subtle
-  font-size font-smaller
+
+p.subtle, p strike
   color color-demote
+p strong, p em
+  font-weight normal
+  font-style normal
+
 li
-  font-size font-smaller
-  margin-bottom 1em
-  list-style-type lower-greek
+  font-size font-medium
+  margin-bottom (1 / font-medium) * 2em
+ol li
+  list-style-type upper-roman
+ul li
+  list-style-type circle
+
+a
+  text-decoration none
+
 
 // fragments
 
@@ -94,12 +112,13 @@ a:hover, a:link, a:visited
 
 code
   font-family font-fixed
-  font-size font-smaller
+  font-weight bold
+  font-variant small-caps
+  text-transform uppercase
 
 .money
   font-family font-fixed
-  font-size font-smaller
-  font-weight bold
+  font-weight normal
   color green
 
 acronym, abbr
@@ -109,17 +128,16 @@ acronym, abbr
 
 .container
   margin 0 auto
-  width 640px
+  width 800px
 
 .area
   display block
 .area-top
   @extend .area
-  margin-top 1em
+  margin-top 4em
 .area-middle
   @extend .area
 .area-bottom
   @extend .area
-  margin-top 6em
-  margin-bottom 12em
+  margin-bottom 4em
 
