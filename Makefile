@@ -1,9 +1,9 @@
 
 BIN = ./node_modules/.bin
 
-PUBLIC_FILES = index.html site.css site.js favicon.png logo_1024.png splat.png
-FILES = $(PUBLIC_FILES:%=public/%)
-TEMP_FILE = $(shell mktemp -t hoidayhack-XXX)
+PUBLIC_FILES := index.html site.css site.js favicon.png logo_1024.png splat.png
+FILES := $(PUBLIC_FILES:%=public/%)
+TEMP_FILE := $(shell mktemp -t holidayhack)
 
 default: node_modules all
 all: $(FILES)
@@ -18,9 +18,9 @@ public/%.html: src/%.jade
 	$(BIN)/jade < $< > $@
 
 public/%.css: src/%.styl
-	$(BIN)/stylus < $< > $@
-	$(BIN)/uglifycss $@ > $(TEMP_FILE)
-	mv $(TEMP_FILE) $@
+	$(BIN)/stylus < $< > $(TEMP_FILE).css
+	$(BIN)/uglifycss $(TEMP_FILE).css > $@
+	rm $(TEMP_FILE).css
 
 public/%.js: src/%.coffee
 	$(BIN)/coffee --compile --stdio < $< > $@
